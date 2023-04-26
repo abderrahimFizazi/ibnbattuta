@@ -11,7 +11,6 @@ pipeline {
           docker stop first
           docker rm first
           docker-compose up -d --no-color --wait
-          docker compose ps
         '''
       }
     }
