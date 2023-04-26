@@ -40,7 +40,7 @@ pipeline {
     }
     success{
       echo "Built with success.."
-      sh 'docker-compose up'
+      sh 'docker compose up'
     }
     failure{
       echo "Failed"
