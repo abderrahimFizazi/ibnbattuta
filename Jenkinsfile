@@ -7,7 +7,11 @@ pipeline {
     stage("deploy") {
       steps {
         echo 'Deploying the app..'
-        sh 'docker-compose up -d && timeout 60 docker-compose logs -f && docker-compose down'
+        sh '''
+          docker stop first
+          docker remove first
+          docker-compose up --detach && timeout 30 docker-compose logs -f && docker-compose down
+        '''
       }
     }
   }
