@@ -9,7 +9,7 @@ pipeline {
         echo 'Deploying the app..'
         sh '''
           docker stop first
-          docker remove first
+          docker rm first
           docker-compose up --detach && timeout 30 docker-compose logs -f && docker-compose down
         '''
       }
