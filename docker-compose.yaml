@@ -1,0 +1,9 @@
+version: '1.0.0'
+services:
+  static-dev:
+    build: ./ibnbattuta-dev
+    container_name: first
+    ports:
+      - '8081:8080'
+    volumes:
+      - ./ibnbattuta-dev:/usr/share/nginx/html
